@@ -33,9 +33,26 @@ const imagesArray = [
 const imageListDom = document.querySelector('.image-list');
 let sliderContent = '';
 
+// SOLUZIONE USANDO UN CICLO .FOREACH//
+
+// imagesArray.forEach((element) => {
+//     let newWrapper = ` <div class="wrapper">
+//     <img src="${element.image}" class="wrapped-img">
+//      <div class="relative-text">
+//         <h2> ${element.title}<h2>
+//         <div class="text"> ${element.text}</div>
+//      </div>
+// </div> `;
+
+//     sliderContent += newWrapper;
+//     console.log(newWrapper);
+// })
+
+// STESSO RISULTATO MA USANDO UN CICLO FOR//
+
 for (let i = 0; i < imagesArray.length; i++) {
     let newWrapper = ` <div class="wrapper">
-                            <img src="${imagesArray[i].image}" class="wrapped-img">
+                           <img src="${imagesArray[i].image}" class="wrapped-img">
                             <div class="relative-text">
                                <h2> ${imagesArray[i].title}<h2>
                                <div class="text"> ${imagesArray[i].text}</div>
@@ -44,8 +61,8 @@ for (let i = 0; i < imagesArray.length; i++) {
 
     sliderContent += newWrapper;
     console.log(newWrapper);
-}
 
+}
 imageListDom.innerHTML = sliderContent;
 
 const wrapperDom = document.getElementsByClassName('wrapper');
